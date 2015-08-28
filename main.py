@@ -22,8 +22,8 @@ def running():
 
 def init():
     scene = bge.logic.getCurrentScene()
-    I2_R = armature.Bones("Index2_R", "Mio_home")
-    I2_R.setScene(scene)
+    P5_R = armature.Bones("Pinky5_R", "Mio_home", scene)
+    I2_R = armature.Bones("Index2_R", "Mio_home", scene)
 
 def update():
     print("hola")

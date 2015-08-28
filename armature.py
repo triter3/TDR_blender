@@ -1,19 +1,17 @@
 import bge
 
 class Armature(object):
-    def __init__(self, name):
+    def __init__(self, name, scene):
         self.armature_name = name
-
-    def setScene(self, scene):
         self.scene = scene
-
+        
     def getScene(self):
         return scene
 
 class Bones(Armature):
-    def __init__(self, name, armature_name):
+    def __init__(self, name, armature_name, scene):
         self.bone_name = name
-        super(Bones, self).__init__(armature_name)
+        super(Bones, self).__init__(armature_name, scene)
 
     def setNickname(self, name):
         self.nickname = name
