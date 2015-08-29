@@ -2,6 +2,7 @@ import time
 import bge
 import armature
 import reader
+import rotations
 
 def main(cont):
     print("start")
@@ -22,14 +23,14 @@ def running():
 
 def init():
     scene = bge.logic.getCurrentScene()
-    P5_R = armature.Bones("Pinky5_R", "Mio_home", scene)
-    P4_R = armature.Bones("Pinky4_R", "Mio_home", scene)
-    I2_R = armature.Bones("Index2_R", "Mio_home", scene)
+    reader.openFile("")
+    home = armature.Armature("Mio_home", scene)
     
 
 def update():
     print("hola")
-    reader.read()
-    
+    movementsList = reader.read()
+
+
 
 
