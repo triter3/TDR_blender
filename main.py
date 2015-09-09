@@ -2,16 +2,16 @@ import time
 import bge
 import armature
 import reader
-import rotations
 
+home = 0
 def main(cont):
     print("start")
     init()
     running()
 
 def running():
-    run = False
-    FPS = 0.5
+    run = True
+    FPS = 1
     afterTime= time.time()
     while(run):
         nowTime = time.time()
@@ -23,13 +23,14 @@ def running():
 
 def init():
     scene = bge.logic.getCurrentScene()
-    reader.openFile("")
+    reader.openFile("GCRANELLA.csv")
+    global home
     home = armature.Armature("Mio_home", scene)
     
 
 def update():
-    print("hola")
-    movementsList = reader.read()
+        print("hola")
+        reader.rotate(home)
 
 
 

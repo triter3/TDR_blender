@@ -23,6 +23,7 @@ class Armature():
             self.scene.objects.get(self.armature_name).channels[bone_name].rotation_mode = bge.logic.ROT_MODE_XYZ
             self.scene.objects.get(self.armature_name).channels[bone_name].rotation_euler = (0, 0, angle)
             self.scene.objects.get(self.armature_name).update()
+        
             
 
 
