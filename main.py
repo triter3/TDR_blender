@@ -4,29 +4,27 @@ import armature
 import reader
 
 home = 0
-def main(cont):
-    print("start")
-    init()
-    running()
+afterTime = 0
 
-def running():
-    run = True
+def running(cont):
     FPS = 1
-    afterTime= time.time()
-    while(run):
-        nowTime = time.time()
-        delta = (nowTime - afterTime) / FPS
-        while(delta >= 1):
-            update()
-            delta -= 1
-            afterTime = time.time()
+    nowTime = time.time()
+    delta = (nowTime - afterTime) / FPS
+    if delta >= 1:
+        update()
+        global afterTime
+        afterTime = nowTime
+            
 
-def init():
+def init(cont):
     scene = bge.logic.getCurrentScene()
     reader.openFile("GCRANELLA.csv")
     global home
     home = armature.Armature("Mio_home", scene)
-    
+    print("init")
+    cont1 = bge.logic.getCurrentController()
+    own = cont1.owner
+    own["val"] = 1
 
 def update():
         print("hola")
