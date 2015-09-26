@@ -7,9 +7,10 @@ home = 0
 afterTime = 0
 
 def running(cont):
-    FPS = 1
+    FPS = 20
     nowTime = time.time()
-    delta = (nowTime - afterTime) / FPS
+    global afterTime
+    delta = (nowTime - afterTime) * FPS
     if delta >= 1:
         update()
         global afterTime
@@ -18,7 +19,7 @@ def running(cont):
 
 def init(cont):
     scene = bge.logic.getCurrentScene()
-    reader.openFile("GCRANELLA.csv")
+    reader.openFile("hola.csv")
     global home
     home = armature.Armature("Mio_home", scene)
     print("init")

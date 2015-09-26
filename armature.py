@@ -1,4 +1,5 @@
 import bge
+import math
 
 class Armature():
     def __init__(self, name, scene):
@@ -11,8 +12,9 @@ class Armature():
     def bone_rotation(self, bone_name, orientation, angle1):
         angle = angle1.replace(",",".")
         angle = float(angle)
-        angle = 369 - angle
-        #print(angle)
+        angle = 360 - angle
+        angle = angle * (math.pi/180)
+        print(angle)
         if orientation == "x":
             self.scene.objects.get(self.armature_name).channels[bone_name].rotation_mode = bge.logic.ROT_MODE_XYZ
             self.scene.objects.get(self.armature_name).channels[bone_name].rotation_euler = (angle, 0, 0)
