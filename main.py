@@ -19,7 +19,8 @@ def running(cont):
 
 def init(cont):
     scene = bge.logic.getCurrentScene()
-    reader.openFile("hola.csv")
+    reader.openFile("/home/edu/Documents/GitHub/TDR_Blender/hola.csv")
+    reader.openTable("/home/edu/Documents/GitHub/TDR_Blender/table.csv")
     global home
     home = armature.Armature("Mio_home", scene)
     print("init")
